@@ -14,6 +14,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
+  gem 'coffee-script'
 end
 
 gem 'jquery-rails'
@@ -43,3 +44,6 @@ group :test do
 end
 
 gem 'slim-rails'
+gem 'gmaps4rails'
+gem 'machinist', '>= 2.0.0.beta2'
+gem 'inherited_resources'
