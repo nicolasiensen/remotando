@@ -1,3 +1,21 @@
-= gmaps4rails(@gmaps_json)
+= gmaps(:map_options => {:detect_location => true, :auto_adjust => true}, :markers => {:data => @gmaps_json, :options => {:do_clustering => true}} )
 nav
   = image_tag "remotando.png"
+
+= content_for :scripts do
+  javascript:
+    Gmaps.map.geolocationSuccess = function() {
+      Gmaps.map.createMarker({
+        Lat: Gmaps.map.userLocation.lat(), 
+        Lng: Gmaps.map.userLocation.lng(), 
+        rich_marker: null, 
+        marker_picture: "http://i.imgur.com/fIBjnTe.png?1",
+        marker_width: 32,
+        marker_height: 32,
+        marker_anchor: null,
+        shadow_anchor: null,
+        shadow_picture: null,
+        shadow_width: null,
+        shadow_height: null
+      });
+    }
