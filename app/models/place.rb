@@ -5,8 +5,4 @@ class Place < ActiveRecord::Base
   def gmaps4rails_address
     "#{self.address}, Rio de Janeiro, Brasil"
   end
-
-  def gmaps4rails_infowindow
-    self.name
-  end
 end
